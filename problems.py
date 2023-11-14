@@ -70,23 +70,57 @@ Output: 58
 Explanation: L = 50, V= 5, III = 3.
 """
 
+# def roman_to_int(s):
+#     roman_values = {'I': 1, 'V': 5, 'X': 10, 'L': 50, 'C': 100, 'D': 500, 'M': 1000}
+#     result = 0
+#     prev_value = 0
+#
+#     for c in s:
+#         current_value = roman_values[c]
+#         if current_value > prev_value:
+#             result += current_value - 2 * prev_value if prev_value != 0 else current_value
+#         else:
+#             result += current_value
+#         prev_value = current_value
+#
+#     return result
+#
+#
+# roman_numeral = "XXVII"
+# print(roman_to_int(roman_numeral))
 
-def roman_to_int(s):
-    roman_values = {'I': 1, 'V': 5, 'X': 10, 'L': 50, 'C': 100, 'D': 500, 'M': 1000}
-    result = 0
-    prev_value = 0
+"""
+                        Longest Common Prefix
+Write a function to find the longest common prefix string amongst an array of strings.
 
-    for c in s:
-        current_value = roman_values[c]
-        if current_value > prev_value:
-            result += current_value - 2 * prev_value if prev_value != 0 else current_value
+If there is no common prefix, return an empty string "".
+
+Example 1:
+
+Input: strs = ["flower","flow","flight"]
+Output: "fl"
+Example 2:
+
+Input: strs = ["dog","racecar","car"]
+Output: ""
+Explanation: There is no common prefix among the input strings.
+"""
+
+
+def longest_common_prefix(strs: list[str]) -> str:
+    if not strs:
+        return ""
+
+    strs.sort()
+    prefix = ""
+
+    for i in range(len(strs[0])):
+        if i < len(strs[-1]) and strs[0][i] == strs[-1][i]:
+            prefix += strs[0][i]
         else:
-            result += current_value
-        prev_value = current_value
+            break
 
-    return result
+    return prefix
 
 
-roman_numeral = "XXVII"
-print(roman_to_int(roman_numeral))
-
+print(longest_common_prefix(["dog", "racecar", "car"]))
