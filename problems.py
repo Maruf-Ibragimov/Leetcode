@@ -89,6 +89,7 @@ Explanation: L = 50, V= 5, III = 3.
 # roman_numeral = "XXVII"
 # print(roman_to_int(roman_numeral))
 
+
 """
                         Longest Common Prefix
 Write a function to find the longest common prefix string amongst an array of strings.
@@ -106,21 +107,20 @@ Output: ""
 Explanation: There is no common prefix among the input strings.
 """
 
-
-def longest_common_prefix(strs: list[str]) -> str:
-    if not strs:
-        return ""
-
-    strs.sort()
-    prefix = ""
-
-    for i in range(len(strs[0])):
-        if i < len(strs[-1]) and strs[0][i] == strs[-1][i]:
-            prefix += strs[0][i]
-        else:
-            break
-
-    return prefix
-
-
-print(longest_common_prefix(["dog", "racecar", "car"]))
+# def longest_common_prefix(strs: list[str]) -> str:
+#     if not strs:
+#         return ""
+#
+#     strs.sort()
+#     prefix = ""
+#
+#     for i in range(len(strs[0])):
+#         if i < len(strs[-1]) and strs[0][i] == strs[-1][i]:
+#             prefix += strs[0][i]
+#         else:
+#             break
+#
+#     return prefix
+#
+#
+# print(longest_common_prefix(["dog", "racecar", "car"]))
