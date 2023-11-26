@@ -30,16 +30,43 @@ Thus, the result should be [1,0].
 """
 
 
+# # Here is my code which actually passed 93/111
+# def plus_one(digits):
+#     x = digits[-1] + 1
+#     digits[-1] = x
+#     if len(digits) == 1:
+#         split_digits = [int(digit) for digit in str(digits[0])]
+#         return split_digits
+#     else:
+#         return digits
+
+# # Here is the solution given by ChatGPT
+# def plus_one(digits):
+#     n = len(digits)
+#     for i in range(n - 1, -1, -1):
+#         if digits[i] < 9:
+#             digits[i] += 1
+#             return digits
+#         else:
+#             digits[i] = 0
+#
+#     return [1] + digits
+
+# Here is the solution from YouTube guy
+
 def plus_one(digits):
-    x = digits[-1] + 1
-    digits[-1] = x
-    if len(digits) == 1:
-        split_digits = [int(digit) for digit in str(digits[0])]
-        return split_digits
-    else:
-        return digits
+    text = ""
+    for i in digits:
+        text += str(i)
+    end = int(text)
+    end += 1
+    str_list = list(str(end))
+    for i, v in enumerate(str_list):
+        str_list[i] = int(v)
+    return str_list
 
 
 print(plus_one([1, 2, 3]))
 print(plus_one([4, 3, 2, 1]))
 print(plus_one([9]))
+print(plus_one([99]))
