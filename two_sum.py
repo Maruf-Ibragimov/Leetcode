@@ -22,15 +22,15 @@ Output: [0,1]
 """
 
 
-# # My solution
-# def two_sum(nums, target):
-#     for i, num in enumerate(nums):
-#         for j in range(i + 1, len(nums)):
-#             if num + nums[j] == target:
-#                 return i, j
-#
-#
-# print(two_sum(nums=[2, 7, 11, 15], target=9))
+# My solution
+def two_sum(nums, target):
+    for i, num in enumerate(nums):
+        for j in range(i + 1, len(nums)):
+            if num + nums[j] == target:
+                return i, j
+
+
+print(two_sum(nums=[2, 7, 11, 15], target=9))
 
 
 # Solution given by ChatGPT
